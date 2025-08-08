@@ -11,17 +11,24 @@ export function useScrollSpy(
     threshold?: number | number[];
   }
 ) {
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(
+    sectionIds[0] ?? null
+  );
 
   const { rootMargin, threshold } = useMemo(
     () => ({
-      rootMargin: options?.rootMargin ?? "-40% 0px -55% 0px",
+      rootMargin: options?.rootMargin ?? "-20% 0px -70% 0px",
       threshold: options?.threshold ?? [0, 0.25, 0.5, 0.75, 1],
     }),
     [options?.rootMargin, options?.threshold]
   );
 
   useEffect(() => {
+    // Ensure an initial active section before any intersection events fire
+    if (!activeId && sectionIds.length > 0) {
+      setActiveId(sectionIds[0]);
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         // Pick the entry that is most visible in the viewport
