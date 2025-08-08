@@ -6,9 +6,9 @@ import { personal } from "@/lib/data";
 export default function Home() {
   return (
     <div className="min-h-screen page-bg">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:[grid-template-columns:minmax(500px,1fr)_minmax(700px,2fr)] gap-12">
+      <div className="max-w-6xl mx-auto  flex flex-col  lg:flex-row gap-3">
         <LeftSidebar />
-        <main className="px-6 space-y-16 sm:space-y-20 lg:space-y-24 py-12 lg:py-24 w-full">
+        <main className="px-6 space-y-16 sm:space-y-20 lg:space-y-24 py-12 lg:py-24 lg:flex-1">
           <section id="about" className="scroll-mt-24" aria-label="About">
             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen  px-6 py-5 backdrop-blur sm:-mx-12 sm:px-12 md:hidden lg:hidden">
               <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200">

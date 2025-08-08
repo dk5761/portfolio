@@ -13,7 +13,7 @@ export default function LeftSidebar() {
   const activeId = useScrollSpy(items.map((i) => i.id));
 
   return (
-    <aside className="block px-6">
+    <aside className="block px-6 lg:w-[480px]">
       <div className="lg:sticky lg:top-0 lg:h-[100svh] flex flex-col justify-between py-12 lg:py-24">
         <div>
           <div>
