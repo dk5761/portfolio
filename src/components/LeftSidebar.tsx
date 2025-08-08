@@ -17,7 +17,7 @@ export default function LeftSidebar() {
       <div className="lg:sticky lg:top-0 lg:h-[100svh] flex flex-col justify-between py-12 lg:py-24">
         <div>
           <div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-100 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold text-slate-100 tracking-tight">
               {personal.name}
             </h1>
             <p className="mt-3 text-lg sm:text-xl text-slate-300">

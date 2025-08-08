@@ -6,7 +6,7 @@ import { personal } from "@/lib/data";
 export default function Home() {
   return (
     <div className="min-h-screen page-bg">
-      <div className="max-w-6xl mx-auto  flex flex-col  lg:flex-row gap-3">
+      <div className="max-w-7xl mx-auto  flex flex-col  lg:flex-row gap-3">
         <LeftSidebar />
         <main className="px-6 space-y-16 sm:space-y-20 lg:space-y-24 py-12 lg:py-24 lg:flex-1">
           <section id="about" className="scroll-mt-24" aria-label="About">

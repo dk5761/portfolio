@@ -15,7 +15,7 @@ export default function Experience() {
           {experiences.map((exp) => (
             <li
               key={`${exp.company}-${exp.start}`}
-              className="group/item relative grid grid-cols-1 sm:[grid-template-columns:140px_1fr] gap-6  hover:!opacity-100 group-hover/list:opacity-50 transition-all p-4
+              className="group/item relative grid grid-cols-1 sm:[grid-template-columns:140px_1fr] gap-6  hover:!opacity-100 group-hover/list:opacity-50 transition-all p-4 cursor-pointer
               
               hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg hover:rounded-lg
               "
@@ -30,9 +30,22 @@ export default function Experience() {
                     <span className="inline-block ml-1">{exp.company}</span>
                   </span>
                 </h3>
-                <p className="text-slate-300 text-sm leading-normal max-w-2xl">
-                  {exp.description}
-                </p>
+                <div className="text-slate-300 text-sm leading-normal max-w-2xl">
+                  {Array.isArray(exp.description) ? (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {exp.description.map((d, idx) => (
+                        <li
+                          key={idx}
+                          className="text-slate-300 text-sm leading-normal"
+                        >
+                          {d}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    exp.description
+                  )}
+                </div>
                 <ul
                   className="mt-2 flex flex-wrap"
                   aria-label="Technologies used"
