@@ -36,7 +36,7 @@ export const personal: Personal = {
   socials: [
     { label: "GitHub", href: "https://github.com/dk5761" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/dk5761/" },
-    { label: "Twitter", href: "https://x.com/drshnk" },
+    { label: "Twitter", href: "https://x.com/drshnk3" },
   ],
 };
 

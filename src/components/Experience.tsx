@@ -19,6 +19,11 @@ export default function Experience() {
               
               hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg hover:rounded-lg
               "
+              onClick={() => {
+                if (exp.companyUrl) {
+                  window.open(exp.companyUrl, "_blank");
+                }
+              }}
             >
               <div className="z-10 text-[11px] font-semibold uppercase tracking-wide text-slate-500 whitespace-nowrap">
                 {exp.start} {exp.end ? `— ${exp.end}` : ""}
