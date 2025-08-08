@@ -31,25 +31,26 @@ export default function LeftSidebar() {
             {items.map((i) => {
               const isActive = activeId === i.id;
               return (
-                <li key={i.id}>
+                <li key={i.id} className="m-0">
                   <a
                     href={`#${i.id}`}
-                    className="group flex items-center gap-4"
+                    className="group flex items-center py-2"
+                    aria-current={isActive ? "true" : undefined}
                   >
                     <span
                       className={
-                        "h-px w-8 transition-colors " +
+                        "nav-indicator mr-4 h-px transition-all motion-reduce:transition-none " +
                         (isActive
-                          ? "bg-slate-200"
-                          : "bg-slate-700 group-hover:bg-slate-500")
+                          ? "w-16 bg-slate-200"
+                          : "w-8 bg-slate-700 group-hover:w-16 group-focus-visible:w-16 group-hover:bg-slate-200 group-focus-visible:bg-slate-200")
                       }
                     />
                     <span
                       className={
-                        "uppercase tracking-[0.15em] text-xs transition-colors " +
+                        "nav-text text-xs font-bold uppercase tracking-widest transition-colors " +
                         (isActive
                           ? "text-slate-200"
-                          : "text-slate-400 group-hover:text-slate-200")
+                          : "text-slate-400 group-hover:text-slate-200 group-focus-visible:text-slate-200")
                       }
                     >
                       {i.label}
