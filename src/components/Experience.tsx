@@ -11,11 +11,14 @@ export default function Experience() {
     <section className="max-w-5xl mx-auto">
       <div className=" gap-10">
         <div id="experience-top" />
-        <ol className="group/list space-y-12">
+        <ol className="group/list space-y-2">
           {experiences.map((exp) => (
             <li
               key={`${exp.company}-${exp.start}`}
-              className="group/item relative grid grid-cols-1 sm:[grid-template-columns:140px_1fr] gap-6 pb-1 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 transition-all"
+              className="group/item relative grid grid-cols-1 sm:[grid-template-columns:140px_1fr] gap-6  hover:!opacity-100 group-hover/list:opacity-50 transition-all p-4
+              
+              hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg hover:rounded-lg
+              "
             >
               <div className="z-10 text-[11px] font-semibold uppercase tracking-wide text-slate-500 whitespace-nowrap">
                 {exp.start} {exp.end ? `— ${exp.end}` : ""}
@@ -41,7 +44,7 @@ export default function Experience() {
                   ))}
                 </ul>
               </div>
-              <div className="pointer-events-none absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:group-hover/item:block lg:group-hover/item:bg-slate-800/50 lg:group-hover/item:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover/item:drop-shadow-lg" />
+              {/* <div className="pointer-events-none absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 group-hover/item:block group-hover/item:bg-slate-800/50 group-hover/item:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] group-hover/item:drop-shadow-lg" /> */}
             </li>
           ))}
         </ol>

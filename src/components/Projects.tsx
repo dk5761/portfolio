@@ -11,11 +11,14 @@ export default function Projects() {
     <section className="max-w-5xl mx-auto pb-24">
       <div className="gap-10">
         <div id="projects-top" />
-        <ul className="group/list space-y-12">
+        <ul className="group/list space-y-2">
           {projects.map((p) => (
             <li
               key={p.title}
-              className="group/item relative grid grid-cols-1 sm:[grid-template-columns:220px_1fr] gap-6 pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
+              className="group/item relative grid grid-cols-1 sm:[grid-template-columns:220px_1fr] gap-6  transition-all hover:!opacity-100 group-hover/list:opacity-50 w-full p-4
+              
+              hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg hover:rounded-lg
+              "
             >
               <div className="aspect-[16/10] rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 bg-slate-800/40 min-h-[120px]" />
               <div className="z-10 space-y-2">
@@ -46,7 +49,7 @@ export default function Projects() {
                   ))}
                 </ul>
               </div>
-              <div className="pointer-events-none absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:group-hover/item:block lg:group-hover/item:bg-slate-800/50 lg:group-hover/item:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover/item:drop-shadow-lg" />
+              {/* <div className="pointer-events-none absolute -inset-y-4 z-0 hidden rounded-md transition -inset-x-6 group-hover/item:block group-hover/item:bg-slate-800/50 group-hover/item:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] group-hover/item:drop-shadow-lg w-full" /> */}
             </li>
           ))}
         </ul>

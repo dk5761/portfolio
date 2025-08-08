@@ -17,6 +17,29 @@ export type Project = {
   image?: string;
 };
 
+export type Personal = {
+  name: string;
+  role: string;
+  intro: string;
+  about: string[];
+  socials: { label: string; href: string }[];
+};
+
+export const personal: Personal = {
+  name: "Darshan Kadam",
+  role: "SDE-2",
+  intro: "I build products for the mobile and web",
+  about: [
+    "I’m a developer passionate about crafting pixel-perfect user interfaces and scalable systems with robust engineering. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.",
+    "Currently, I focus on mobile and web development, ensuring platforms meet standards and best practices to deliver an inclusive user experience.",
+  ],
+  socials: [
+    { label: "GitHub", href: "https://github.com/dk5761" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/dk5761/" },
+    { label: "Twitter", href: "https://x.com/drshnk" },
+  ],
+};
+
 export const experiences: Experience[] = [
   {
     company: "Acme Corp",

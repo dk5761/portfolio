@@ -1,6 +1,7 @@
 "use client";
 
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import { personal } from "@/lib/data";
 
 const items = [
   { id: "about", label: "About" },
@@ -17,14 +18,12 @@ export default function LeftSidebar() {
         <div>
           <div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-100 tracking-tight">
-              Your Name
+              {personal.name}
             </h1>
             <p className="mt-3 text-lg sm:text-xl text-slate-300">
-              Front End Engineer
+              {personal.role}
             </p>
-            <p className="mt-4 max-w-sm text-slate-400">
-              I build accessible, pixel-perfect digital experiences for the web.
-            </p>
+            <p className="mt-4 max-w-sm text-slate-400">{personal.intro}</p>
           </div>
 
           <nav
@@ -68,27 +67,18 @@ export default function LeftSidebar() {
         </div>
 
         <div className="pt-8 lg:pt-12 flex gap-5 text-slate-400">
-          <a
-            className="hover:text-slate-200 transition-colors text-sm"
-            href="#"
-            aria-label="GitHub"
-          >
-            GitHub
-          </a>
-          <a
-            className="hover:text-slate-200 transition-colors text-sm"
-            href="#"
-            aria-label="LinkedIn"
-          >
-            LinkedIn
-          </a>
-          <a
-            className="hover:text-slate-200 transition-colors text-sm"
-            href="#"
-            aria-label="Twitter"
-          >
-            Twitter
-          </a>
+          {personal.socials.map((s) => (
+            <a
+              key={s.label}
+              className="hover:text-slate-200 transition-colors text-sm"
+              href={s.href}
+              aria-label={s.label}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {s.label}
+            </a>
+          ))}
         </div>
       </div>
     </aside>
