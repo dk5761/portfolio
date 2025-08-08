@@ -12,19 +12,21 @@ export default function LeftSidebar() {
   const activeId = useScrollSpy(items.map((i) => i.id));
 
   return (
-    <aside className="hidden md:block px-6">
-      <div className="sticky top-0 h-[100svh] flex flex-col justify-between py-24">
+    <aside className="block px-6">
+      <div className="lg:sticky lg:top-0 lg:h-[100svh] flex flex-col justify-between py-12 lg:py-24">
         <div>
-          <h1 className="text-6xl font-extrabold text-slate-100 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-100 tracking-tight">
             Your Name
           </h1>
-          <p className="mt-3 text-xl text-slate-300">Front End Engineer</p>
+          <p className="mt-3 text-lg sm:text-xl text-slate-300">
+            Front End Engineer
+          </p>
           <p className="mt-4 max-w-sm text-slate-400">
             I build accessible, pixel-perfect digital experiences for the web.
           </p>
         </div>
 
-        <nav aria-label="Section navigation" className="mt-10">
+        <nav aria-label="Section navigation" className="mt-10 hidden lg:block">
           <ul className="space-y-5 text-slate-400">
             {items.map((i) => {
               const isActive = activeId === i.id;
@@ -59,7 +61,7 @@ export default function LeftSidebar() {
           </ul>
         </nav>
 
-        <div className="pt-12 flex gap-5 text-slate-400">
+        <div className="pt-8 lg:pt-12 flex gap-5 text-slate-400">
           <a
             className="hover:text-slate-200 transition-colors text-sm"
             href="#"
