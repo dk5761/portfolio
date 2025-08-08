@@ -140,4 +140,13 @@ export const projects: Project[] = [
       "Current Iteration of the portfolio site, built with Next.js, Tailwind CSS, and TypeScript.",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
   },
+  {
+    title: "Split Up (in progress)",
+    href: "https://github.com/dk5761/go-splitUp/",
+    image:
+      "https://personal-drshnk.s3.ap-south-1.amazonaws.com/work-in-progress-rubber-stamp-work-in-progress-grunge-stamp-seal-illustration-free-vector.jpg",
+    description:
+      "Go Lang backend code for a gin based webserver , to split billing with genAI features",
+    technologies: ["Go Lang", "Gin", "Gen AI"],
+  },
 ];

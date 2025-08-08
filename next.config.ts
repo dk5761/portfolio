@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Enable standalone output for slimmer Docker images */
+  output: "standalone",
   images: {
     remotePatterns: [
       {
