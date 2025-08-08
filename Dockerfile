@@ -34,7 +34,7 @@ COPY --from=build /app/.next/static ./.next/static
 COPY --from=build /app/public ./public
 
 # Expose the Next.js port
-EXPOSE 3000
+EXPOSE 80
 
 # Run as non-root
 USER nextjs
