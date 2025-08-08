@@ -24,6 +24,7 @@ RUN pnpm build
 FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
+ENV PORT=8082
 
 # Create a non-root user
 RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
@@ -33,8 +34,8 @@ COPY --from=build /app/.next/standalone ./
 COPY --from=build /app/.next/static ./.next/static
 COPY --from=build /app/public ./public
 
-# Expose the Next.js port
-EXPOSE 80
+# Expose the app port (not 3000 to avoid conflicts; good for Dokploy)
+EXPOSE 8082
 
 # Run as non-root
 USER nextjs
