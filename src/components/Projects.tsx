@@ -20,11 +20,11 @@ export default function Projects() {
               
               hover:bg-slate-800/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg hover:rounded-lg
               "
-              onClick={() => {
-                if (p.href) {
-                  window.open(p.href, "_blank");
-                }
-              }}
+              // onClick={() => {
+              //   if (p.href) {
+              //     window.open(p.href, "_blank");
+              //   }
+              // }}
             >
               <div className="aspect-[16/10] rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 bg-slate-800/40 min-h-[120px]">
                 {p.image && (
