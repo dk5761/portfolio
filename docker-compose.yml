@@ -8,6 +8,16 @@ services:
       - NODE_ENV=production
       - PORT=8082
       - NEXT_TELEMETRY_DISABLED=1
-    ports:
-      - "8082:8082"
     restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portfolio.rule=Host(`portfolio.drshnk.com`)"
+      - "traefik.http.routers.portfolio.entrypoints=websecure"
+      - "traefik.http.routers.portfolio.tls.certresolver=letsencrypt"
+      - "traefik.http.services.portfolio.loadbalancer.server.port=8082"
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    external: true
