@@ -5,28 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - NODE_ENV=production
-      - PORT=8082
-      - NEXT_TELEMETRY_DISABLED=1
-    ports:
-      - 8082
+      NODE_ENV: production
+      PORT: 8082
+      NEXT_TELEMETRY_DISABLED: 1
     restart: unless-stopped
-    labels:
-      - traefik.enable=true
-      - traefik.docker.network=dokploy-network
-      - traefik.http.routers.portfolio-app-i1zfqn-1-web.rule=Host(`portfolio.drshnk.com`)
-      - traefik.http.routers.portfolio-app-i1zfqn-1-web.entrypoints=web
-      - traefik.http.services.portfolio-app-i1zfqn-1-web.loadbalancer.server.port=8082
-      - traefik.http.routers.portfolio-app-i1zfqn-1-web.service=portfolio-app-i1zfqn-1-web
-      - traefik.http.routers.portfolio-app-i1zfqn-1-web.middlewares=redirect-to-https@file
-      - traefik.http.routers.portfolio-app-i1zfqn-1-websecure.rule=Host(`portfolio.drshnk.com`)
-      - traefik.http.routers.portfolio-app-i1zfqn-1-websecure.entrypoints=websecure
-      - traefik.http.services.portfolio-app-i1zfqn-1-websecure.loadbalancer.server.port=8082
-      - traefik.http.routers.portfolio-app-i1zfqn-1-websecure.service=portfolio-app-i1zfqn-1-websecure
-      - traefik.http.routers.portfolio-app-i1zfqn-1-websecure.tls.certresolver=letsencrypt
-    networks:
-      - dokploy-network
-
-networks:
-  dokploy-network:
-    external: true
