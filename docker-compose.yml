@@ -10,11 +10,15 @@ services:
       - NEXT_TELEMETRY_DISABLED=1
     restart: unless-stopped
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.portfolio.rule=Host(`portfolio.drshnk.com`)"
-      - "traefik.http.routers.portfolio.entrypoints=websecure"
-      - "traefik.http.routers.portfolio.tls.certresolver=letsencrypt"
-      - "traefik.http.services.portfolio.loadbalancer.server.port=8082"
+      - traefik.enable=true
+      - traefik.docker.network=dokploy-network
+      - traefik.http.routers.portfolio-web.rule=Host(`portfolio.drshnk.com`)
+      - traefik.http.routers.portfolio-web.entrypoints=web
+      - traefik.http.routers.portfolio-web.middlewares=redirect-to-https@file
+      - traefik.http.routers.portfolio-websecure.rule=Host(`portfolio.drshnk.com`)
+      - traefik.http.routers.portfolio-websecure.entrypoints=websecure
+      - traefik.http.routers.portfolio-websecure.tls.certresolver=letsencrypt
+      - traefik.http.services.portfolio.loadbalancer.server.port=8082
     networks:
       - dokploy-network
 
